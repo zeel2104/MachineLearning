@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog1",
+    "section": "",
+    "text": "Import Libary\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nUsing the elbow method to find the optimal number of clusters\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSplitting the dataset into the Training set and Test set\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nImport Libary\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nImport Libary\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Linear Regression and Non Linear Regression",
+    "section": "",
+    "text": "This is my 1st blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n\n# Import Libary\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\n\n# Download and prepare the data\ndf=pd.read_csv(\"headbrain.csv\")\n\ndf.head()\n\n\n\n\n\n\n\n\nGender\nAge Range\nHead Size(cm^3)\nBrain Weight(grams)\n\n\n\n\n0\n1\n1\n4512\n1530\n\n\n1\n1\n1\n3738\n1297\n\n\n2\n1\n1\n4261\n1335\n\n\n3\n1\n1\n3777\n1282\n\n\n4\n1\n1\n4177\n1590"
+  },
+  {
+    "objectID": "posts/blog4/index.html",
+    "href": "posts/blog4/index.html",
+    "title": "Blog1",
+    "section": "",
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n\ndatasets = pd.read_csv('SocialNetworks.csv')\nX = datasets.iloc[:, [2,3]].values\nY = datasets.iloc[:, 4].values\n\n\n# Splitting the dataset into the Training set and Test set\n\nfrom sklearn.model_selection import train_test_split\nX_Train, X_Test, Y_Train, Y_Test = train_test_split(X, Y, test_size = 0.25, random_state = 0)\n\n\n# Feature Scaling\n\nfrom sklearn.preprocessing import StandardScaler\nsc_X = StandardScaler()\nX_Train = sc_X.fit_transform(X_Train)\nX_Test = sc_X.transform(X_Test)\n\n\n# Fitting the Logistic Regression into the Training set\n\nfrom sklearn.linear_model import LogisticRegression\nclassifier = LogisticRegression(random_state = 0)\nclassifier.fit(X_Train, Y_Train)\n\nLogisticRegression(random_state=0)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.LogisticRegressionLogisticRegression(random_state=0)\n\n\n\n# Visualising the clusters\n\n# Predicting the test set results\n\nY_Pred = classifier.predict(X_Test)\n\n\nfrom sklearn.metrics import confusion_matrix\ncm = confusion_matrix(Y_Test, Y_Pred)\n\n\nfrom sklearn.metrics import confusion_matrix\ncm = confusion_matrix(Y_Test, Y_Pred)\n\n\ncm\n\narray([[65,  3],\n       [ 8, 24]], dtype=int64)\n\n\n\n# Visualising the Training set results \n\nfrom matplotlib.colors import ListedColormap\nX_Set, Y_Set = X_Train, Y_Train\nX1, X2 = np.meshgrid(np.arange(start = X_Set[:,0].min() -1, stop = X_Set[:, 0].max() +1, step = 0.01),\n                     np.arange(start = X_Set[:,1].min() -1, stop = X_Set[:, 1].max() +1, step = 0.01))\n\nplt.contourf(X1,X2, classifier.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape),\n             alpha = 0.75, cmap = ListedColormap(('red', 'green')))\n\nplt.xlim(X1.min(), X2.max())\nplt.ylim(X2.min(), X2.max())\nfor i, j in enumerate(np.unique(Y_Set)):\n    plt.scatter(X_Set[Y_Set == j, 0], X_Set[Y_Set == j,1],\n                c = ListedColormap(('red', 'green'))(i), label = j)\nplt.title('Logistic Regression ( Training set)')\nplt.xlabel('Age')\nplt.ylabel('Estimated Salary')\nplt.legend()\nplt.show()\n\nC:\\Users\\desai\\AppData\\Local\\Temp\\ipykernel_11936\\3356985325.py:14: UserWarning:\n\n*c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points."
+  }
+]

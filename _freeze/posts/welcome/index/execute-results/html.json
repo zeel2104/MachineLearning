@@ -1,0 +1,15 @@
+{
+  "hash": "7a083320deaa9b912231c06e3192422a",
+  "result": {
+    "markdown": "---\ntitle: \"Linear Regression  and Non Linear Regression\"\nauthor: \"Zeel\"\ndate: \"2023-11-04\"\ncategories: [Machine Learning]\n---\n\nThis is my 1st blog. Welcome!\n\n![](thumbnail.jpg)\n\nSince this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\n# Import Libary\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\n\n# Download and prepare the data\ndf=pd.read_csv(\"headbrain.csv\")\n\ndf.head()\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```{=html}\n<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Gender</th>\n      <th>Age Range</th>\n      <th>Head Size(cm^3)</th>\n      <th>Brain Weight(grams)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>1</td>\n      <td>1</td>\n      <td>4512</td>\n      <td>1530</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>1</td>\n      <td>1</td>\n      <td>3738</td>\n      <td>1297</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>1</td>\n      <td>1</td>\n      <td>4261</td>\n      <td>1335</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>1</td>\n      <td>1</td>\n      <td>3777</td>\n      <td>1282</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>1</td>\n      <td>1</td>\n      <td>4177</td>\n      <td>1590</td>\n    </tr>\n  </tbody>\n</table>\n</div>\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js\" integrity=\"sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\" integrity=\"sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==\" crossorigin=\"anonymous\"></script>\n<script type=\"application/javascript\">define('jquery', [],function() {return window.jQuery;})</script>\n"
+      ]
+    }
+  }
+}
